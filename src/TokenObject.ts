@@ -46,9 +46,9 @@ class TokenObject {
   }
 
   initialToken(): TokenInterface {
-    const authCookie = Cookies.get(this.authCookieName)
-    const authTimeCookie = Cookies.get(this.authTimeCookieName)
-    const stateCookie = Cookies.get(this.stateCookieName)
+    const authCookie = JSON.parse(Cookies.get(this.authCookieName))
+    const authTimeCookie = JSON.parse(Cookies.get(this.authTimeCookieName))
+    const stateCookie = JSON.parse(Cookies.get(this.stateCookieName))
 
     if (authCookie !== undefined && authTimeCookie !== undefined) {
       const token = authCookie
